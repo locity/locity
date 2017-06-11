@@ -1,0 +1,8 @@
+app:
+  restart: always
+  user: node
+  build: $PWD/app
+  ports:
+    - "3000:3000"
+  volumes:
+    - $PWD/app:/home/node

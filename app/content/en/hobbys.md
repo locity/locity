@@ -1,0 +1,6 @@
+- Fitness / Cycling
+- Traveling
+- Taking photos
+- Reading
+- Music
+- Motorbike (no bike at the moment)

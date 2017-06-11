@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css?family=Maven+Pro:400,500');
+@import 'layout';
+@import 'hexagon_grid';
+@import 'perspective';
+@import 'lang_switch';
+@import 'sprite';
+
+
+$cells: @@cell_count@@; // Is inserted by gulp
+$cols-xs: 2;
+$cols-sm: 3;
+$cols-md: 4;
+$cols-lg: 5;
+$space-xs: 25vw / $cols-xs;
+$space-sm: 25vw / $cols-sm;
+$space-md: 25vw / $cols-md;
+$space-lg: 25vw / $cols-lg;
+$height-xs: (100vw / $cols-xs * ceil($cells / $cols-xs));
+$height-sm: (100vw / $cols-sm * ceil($cells / $cols-sm));
+$height-md: (100vw / $cols-md * ceil($cells / $cols-md));
+$height-lg: (100vw / $cols-lg * ceil($cells / $cols-lg));
+$break-xs-max: 599px;
+$break-sm-min: 600px;
+$break-sm-max: 899px;
+$break-md-min: 900px;
+$break-md-max: 1199px;
+$break-lg-min: 1200px;
+
+@media screen and (max-width: $break-xs-max) {
+  @include hexagon-grid($cols-xs, 1);
+  .title { font-size: 6.5vw; }
+  .shadows { display: none; }
+  aside section, table { font-size: 14px; }
+  html {min-height: (2 * $space-xs + $height-xs);}
+  main {
+    padding: 0 10vw;
+    height: $height-xs;
+    .hex-grid {
+      transform: rotateX(0);
+      .hex-offset {
+        transform: none;
+        &:hover { transform: scale(1.2); }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $break-sm-min) and (max-width: $break-sm-max) {
+  @include hexagon-grid($cols-sm, 2);
+  .title { font-size: 4vw; }
+  aside section, table { font-size: 16px; }
+  html {min-height: (2 * $space-sm + $height-sm);}
+  main {
+    padding: 0 15vw;
+    height: $height-sm;
+  }
+}
+
+@media screen and (min-width: $break-md-min) and (max-width: $break-md-max) {
+  @include hexagon-grid($cols-md, 3);
+  .title { font-size: 2.5vw; }
+  aside {
+    .close-article-btn { right: calc(50% + 5px); }
+    article .page.next { right: calc(50% - 8px); }
+    article { left: calc(-70% + 10px); }
+    input[type="radio"]:checked + article { right: 50%; }
+    section, table { font-size: 16px; }
+  }
+  html {min-height: (2 * $space-md + $height-md);}
+  main {
+    padding: 0 15vw;
+    height: $height-md;
+  }
+}
+
+@media screen and (min-width: $break-lg-min) {
+  @include hexagon-grid($cols-lg, 4);
+  .title { font-size: 2vw; }
+  aside {
+    .close-article-btn { right: calc(60% + 5px); }
+    article .page.next { right: calc(60% - 8px); }
+    article { left: calc(-60% + 10px); }
+    input[type="radio"]:checked + article { right: 60%; }
+    section, table { font-size: 17px; }
+  }
+  html {min-height: (2 * $space-lg + $height-lg);}
+  main {
+    padding: 0 20vw;
+    height: $height-lg;
+  }
+}
+

@@ -1,0 +1,144 @@
+$default_orientations: 'lying', 'standing';
+$default_start: 'up';
+$default_types: 'inner', 'outer';
+$default_color: #4671D5;
+
+@mixin hexagon-grid-lying($cols, $gap, $color: $default_color) {
+  @include hexagon-grid($cols, $gap, 'lying', $default_start, 'inner', $color);
+}
+
+@mixin hexagon-grid-standing($cols, $gap, $color: $default_color) {
+  @include hexagon-grid($cols, $gap, 'standing', $default_start, 'inner', $color);
+}
+
+@mixin hexagon-grid($cols, $gap, $orientations: $default_orientations, $start: $default_start, $types: $default_types, $color: $default_color) {
+  $start_direction: if($start == $default_start, 1, -1);
+  .hex-grid {
+    display: grid;
+    grid-template-columns: repeat($cols, percentage(1 / $cols));
+    .content {
+      background-color: $color;
+      position: absolute;
+      z-index: 1;
+    }
+    .hex-cell {
+      margin: percentage($gap / 100);
+      position: relative;
+      &:after {
+        content: '';
+        display: block;
+      }
+    }
+    .hex-offset {
+      height: 100%;
+      position: absolute;
+      width: 100%;
+    }    
+    .hex-bg {
+      position: absolute;
+      @if(index($types, 'inner')) {
+        &.inner {
+          background-color: $color;
+          &:before, &:after {
+            background-color: inherit;
+            content: '';
+            height: 100%;
+            left: 0;
+            position: absolute;
+            width: 100%;
+          }
+          &:before { transform: rotateZ(60deg); }
+          &:after { transform: rotateZ(-60deg); }
+        }
+      }
+      @if(index($types, 'outer')) {
+        &.outer, &.outer div { overflow: hidden; }
+        &.outer div {
+          height: 100%;
+          position: absolute; 
+          width: 100%;
+        }
+        .hex-bg-1, .hex-bg-2 { transform: rotate(-60deg); }
+      }
+    }
+    @if(index($orientations, 'lying')) {
+      &.lying {
+        .hex-cell {
+          &:after { padding-bottom: 115.4700538379251%; }
+          @if $cols % 2 == 0 {
+            &:nth-child(even) { @include cell-offset($start_direction * -1, $gap, 'lying'); }
+            &:nth-child(odd) { @include cell-offset($start_direction, $gap, 'lying'); }
+          }@else{
+            @for $i from 1 through $cols {
+              &:nth-child(#{$cols}n+#{$i}) {
+                @if $i % 2 == 0 {
+                  @include cell-offset($start_direction * -1, $gap, 'lying');
+                }@else{
+                  @include cell-offset($start_direction, $gap, 'lying');
+                }
+              }
+            }
+          }
+        }
+        .hex-bg {
+          @if(index($types, 'inner')) {
+            &.inner {
+              height: 100%;
+              left: 50%;
+              margin-left: calc(50% / -1.5);
+              width: calc(100% / 1.5);
+            }
+          }
+          @if(index($types, 'outer')) {
+            &.outer {
+              height: 100%;
+              left: -18.5%;
+              transform: rotate(120deg);
+              width: 136.6025403784439%;
+            }
+          }
+        }
+      }
+    }
+    @if(index($orientations, 'standing')) {
+      &.standing {
+        .hex-cell {
+          &:after { padding-bottom: 86.6025403784439%; }
+          @for $i from 1 through $cols {
+            &:nth-child(#{$cols * 2}n+#{$i}) { @include cell-offset($start_direction, $gap, 'standing'); }
+            &:nth-child(#{$cols * 2}n+#{$i+$cols}) { @include cell-offset($start_direction * -1, $gap, 'standing'); }
+          }    
+        }
+        .hex-bg {
+          @if(index($types, 'inner')) {
+            &.inner {
+              height: calc(100% / 1.5);
+              margin-top: calc(50% / -1.732050807568877);
+              width: 100%;
+              top: 50%;
+            }
+          }
+          @if(index($types, 'outer')) {
+            &.outer {
+              height: 136.6025403784439%;
+              top: -18.5%;
+              transform: rotate(120deg);
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Cell offset to fit in the hexagon grid
+@mixin cell-offset($direction, $gap, $orientation) {
+  .hex-offset {
+    @if($orientation == 'lying') {
+      margin: percentage(((.25 * 1.154700538379251) + ($gap / 200)) * $direction * -1) 0 percentage((.25 + ($gap / 200)) * $direction);
+    } @else {
+      margin: 0 percentage((.25 + ($gap / 200)) * $direction) 0 percentage((.25 + ($gap / 200)) * $direction * -1);
+    }
+  }
+}

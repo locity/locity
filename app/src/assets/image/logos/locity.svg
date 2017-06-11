@@ -1,0 +1,12 @@
+<svg width="50" height="50" viewBox="0 0 868 1000" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g id="Outer">
+    <polygon id="Outer-Right-Bottom" fill="#4671D5" points="737.109985 325 867.012702 250 867.012702 750 434 1000 434 850 737.109985 675"></polygon>
+    <polygon id="Outer-Left-Bottom" fill="#2A4480" points="130.889999 325 130.889999 675 434 850 434 1000 0.987298108 750 0.987298108 250"></polygon>
+    <polygon id="Outer-Top" fill="#6C8CD5" points="434 0 867.012702 250 737.109985 325 434 150 130.889999 325 0.987298108 250"></polygon>
+  </g>
+  <g id="Inner" transform="translate(130.000000, 150.000000)">
+    <polygon id="Inner-Right-Top" fill="#2A4480" points="304 0 607.109985 175 607.108891 525 477.210022 450 477.210022 250 304 150"></polygon>
+    <polygon id="Innter-Left-Top" fill="#4671D5" points="304 0 303.999992 150 131.578125 249.523438 130.790009 450 0.891108675 525 0.88999939 175"></polygon>
+    <polygon id="Inner-Bottom" fill="#6C8CD5" points="304 550 477.210022 450 607.108891 525 304 700 0.891108675 525 130.790009 450"></polygon>
+  </g>
+</svg>

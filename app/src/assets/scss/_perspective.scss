@@ -1,0 +1,39 @@
+main {
+  position: relative;
+  perspective: 700px;
+  z-index: 10;
+  // overflow: hidden;
+  .hex-grid {
+    transition: transform 1s cubic-bezier(0.430, 0.120, 0.685, 1.650); /* easeOutBack */
+    transform: rotateX(35deg);
+    transform-style: preserve-3d;
+    transform-origin: center 65%;
+    z-index: 5;
+    .hex-offset {
+      opacity: .6;
+      width: 100%;
+      text-align: center;
+      transform: rotateX(0deg) translateZ(0px) translatey(0px) scale(1);
+      transition: transform 0.3s ease-out, margin 1s cubic-bezier(0.430, 0.120, 0.510, 1.350);
+      &:hover, &.active {
+        z-index: 200;
+        opacity: 1;
+        transform: rotateX(-35deg) translateZ(90px) translatey(0px) scale(1.05);
+      }
+    }
+  }
+}
+
+.shadows {
+  z-index: 200;
+  display: block;
+  position: fixed;
+  top: -25%;
+  left: -15%;
+  bottom: -25%;
+  right: -15%;
+  background-image: radial-gradient(closest-side, rgba(60, 60, 80, 0), rgba(60, 60, 80, 1));
+  opacity: 0.5;
+  transform: translateZ(10px);
+  pointer-events: none;
+}

@@ -1,0 +1,57 @@
+[
+  {
+    "ger": "Marco Lehmann",
+    "eng": "marco lehmann",
+    "file": "marco_lehmann"
+  },
+  {
+    "ger": "Locity GmbH",
+    "eng": "locity gmbh",
+    "file": "locity_gmbh"
+  },
+  {
+    "ger": "Backend",
+    "eng": "backend",
+    "file": "backend"
+  },
+  {
+    "ger": "Frontend",
+    "eng": "frontend",
+    "file": "frontend"
+  },
+  {
+    "ger": "Projekt Management",
+    "eng": "project management",
+    "file": "project_management"
+  },
+  {
+    "ger": "DevOps",
+    "eng": "dev ops",
+    "file": "dev_ops"
+  },
+  {
+    "ger": "Jobs",
+    "eng": "jobs",
+    "file": "jobs"
+  },
+  {
+    "ger": "Neuste Projekte",
+    "eng": "recent projects",
+    "file": "projects"
+  },
+  {
+    "ger": "Hobbys",
+    "eng": "hobbys",
+    "file": "hobbys"
+  },
+  {
+    "ger": "Kontakt",
+    "eng": "contact",
+    "file": "contact"
+  },
+  {
+    "ger": "Impressum",
+    "eng": "imprint",
+    "file": "imprint"
+  }
+]
