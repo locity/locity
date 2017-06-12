@@ -16,19 +16,19 @@
   </head>
   <body>
     <main>
-      <div class="hex-grid standing">
-
+      <div>
+      <div class="hex-grid standing cell-home">
         {{#each cells}}
         <div class="hex-cell"><div class="hex-offset">
           <svg width="100%" viewBox="0 0 477 551" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-            <polygon id="Polygon" stroke="#979797" fill="#D8D8D8" points="238.5 1 476.223973 138.25 476.223973 412.75 238.5 550 0.7760267 412.75 0.7760267 138.25"></polygon>
+            <polygon class="cell-bg" points="238.5 1 476.223973 138.25 476.223973 412.75 238.5 550 0.7760267 412.75 0.7760267 138.25"></polygon>
             <text class="title font-family="Calibri" font-size="65" font-weight="normal" fill="#FFFFFF">
               <tspan x="168.882568" y="288">{{this.ger}}</tspan>
             </text>
           </svg>
         </div></div>
         {{/each}}
-      </div>
+      </div></div>
       
     </main>
 <!--     <script>

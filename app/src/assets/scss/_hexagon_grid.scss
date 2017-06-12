@@ -15,7 +15,7 @@ $default_color: #4671D5;
   $start_direction: if($start == $default_start, 1, -1);
   .hex-grid {
     display: grid;
-    grid-template-columns: repeat($cols, percentage(1 / $cols));
+    grid-template-columns: repeat($cols, 100%);
     .content {
       background-color: $color;
       position: absolute;

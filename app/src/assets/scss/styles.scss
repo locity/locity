@@ -7,17 +7,4 @@
 $cells: @@cell_count@@; // Is inserted by gulp
 $cols: 4;
 
-  @include hexagon-grid($cols, 1, 'standing', 'down');
-  aside section, table { font-size: 14px; }
-  // html {min-height: (2 * $space-xs + $height-xs);}
-  main {
-    padding: 0 10vw;
-    // height: $height-xs;
-    .hex-grid {
-      transform: rotateX(0);
-      .hex-offset {
-        transform: none;
-        // &:hover { transform: scale(1.2); }
-      }
-    }
-  }
+@include hexagon-grid($cols, 1, 'standing', 'down');
