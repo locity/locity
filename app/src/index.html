@@ -25,9 +25,51 @@
           {{#if file}}
           <svg width="100%" viewBox="0 0 477 551" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
             <polygon class="cell-bg" points="238.5 1 476.223973 138.25 476.223973 412.75 238.5 550 0.7760267 412.75 0.7760267 138.25"></polygon>
-            <text x="238.5" y="288" text-anchor="middle" class="title" font-family="Calibri" font-size="65" font-weight="normal" fill="#FFFFFF">{{ger}}</text>
+            <!-- <text x="238.5" y="288" text-anchor="middle" class="title" font-family="Calibri" font-size="65" font-weight="normal" fill="#FFFFFF">{{ger}}</text> -->
+
+            <a xlink:href="#cell1">
+            <text id="Top-Left" transform="translate(125.747525, 78.951220) rotate(-30.000000) translate(-125.747525, -78.951220)">
+                <tspan x="93.7260405" y="85.9512203">Top Left</tspan>
+            </text>
+            </a>
+            <a xlink:href="#cell2">
+            <text id="Bottom-Left" transform="translate(125.747525, 469.951220) rotate(30.000000) translate(-125.747525, -469.951220)">
+                <tspan x="78.0180327" y="476.95122">Bottom Left</tspan>
+            </text>
+            </a>
+            <a xlink:href="#cell3">
+            <text id="Bottom-Right" transform="translate(351.747525, 471.951220) rotate(-30.000000) translate(-351.747525, -471.951220)">
+                <tspan x="298.324673" y="478.95122">Bottom Right</tspan>
+            </text>
+            </a>
+            <a xlink:href="#cell4">
+            <text id="Right" transform="translate(464.000000, 276.117831) rotate(-90.000000) translate(-464.000000, -276.117831)">
+                <tspan x="443.057617" y="283.117831">Right</tspan>
+            </text>
+            </a>
+            <a xlink:href="#cell5">
+            <text id="Right-Copy" transform="translate(13.000000, 274.117831) rotate(90.000000) translate(-13.000000, -274.117831)">
+                <tspan x="-2.24902344" y="281.117831">Left</tspan>
+            </text>
+            </a>
+            <a xlink:href="#cell6">
+            <text id="Top-Right" transform="translate(351.747525, 78.951220) rotate(30.000000) translate(-351.747525, -78.951220)">
+                <tspan x="314.032681" y="85.9512203">Top Right</tspan>
+            </text>
+            </a>
+
+<!--             <text id="Moin" transform="translate(496.414247, 125.246606) rotate(30.000000) translate(-496.414247, -125.246606) " font-family="Calibri" font-size="65">
+                <tspan x="426.955018" y="147.746606">Moin</tspan>
+            </text> -->
+
+
           </svg>
-          <section>
+          {{/if}}
+        </div></div>
+        {{/each}}
+      </main></div>
+      
+<!--           <section>
             <a href="#cell1">Cell 1</a>
             <a href="#cell2">Cell 2</a>
             <a href="#cell3">Cell 3</a>
@@ -37,12 +79,7 @@
             <a href="#cell7">Cell 7</a>
             <a href="#cell8">Cell 8</a>
             <a href="#cell9">Cell 9</a>
-          </section>
-          {{/if}}
-        </div></div>
-        {{/each}}
-      </main></div>
-      
+          </section> -->
     </div></div></div>
 
     <script>

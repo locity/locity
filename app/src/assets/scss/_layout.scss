@@ -36,6 +36,15 @@ a {
     filter: blur(0);
     pointer-events: auto;
   }
+  a {
+    &:link, &:visited, &:active, &:hover {
+      text-decoration: none;
+      fill: #fff;
+    }
+    &:hover {
+      fill: #ddd;
+    }
+  }
 }
 
 .brand {
