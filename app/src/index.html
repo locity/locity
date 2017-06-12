@@ -20,22 +20,22 @@
       <div>
       <main class="cell-home">
         {{#each cells}}
-        <div class="hex-cell"><div class="hex-offset">
+        <div class="hex-cell cell-{{file}}"><div class="hex-offset">
           {{#if file}}
           <svg width="100%" viewBox="0 0 477 551" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
             <polygon class="cell-bg" points="238.5 1 476.223973 138.25 476.223973 412.75 238.5 550 0.7760267 412.75 0.7760267 138.25"></polygon>
-            <text x="238.5" y="288" text-anchor="middle" class="title" font-family="Calibri" font-size="65" font-weight="normal" fill="#FFFFFF">{{this.ger}}</text>
+            <text x="238.5" y="288" text-anchor="middle" class="title" font-family="Calibri" font-size="65" font-weight="normal" fill="#FFFFFF">{{ger}}</text>
           </svg>
           <section>
-            <a href="#cell-1">Cell 1</a>
-            <a href="#cell-2">Cell 2</a>
-            <a href="#cell-3">Cell 3</a>
-            <a href="#cell-4">Cell 4</a>
-            <a href="#cell-5">Cell 5</a>
-            <a href="#cell-6">Cell 6</a>
-            <a href="#cell-7">Cell 7</a>
-            <a href="#cell-8">Cell 8</a>
-            <a href="#cell-9">Cell 9</a>
+            <a href="#cell1">Cell 1</a>
+            <a href="#cell2">Cell 2</a>
+            <a href="#cell3">Cell 3</a>
+            <a href="#cell4">Cell 4</a>
+            <a href="#cell5">Cell 5</a>
+            <a href="#cell6">Cell 6</a>
+            <a href="#cell7">Cell 7</a>
+            <a href="#cell8">Cell 8</a>
+            <a href="#cell9">Cell 9</a>
           </section>
           {{/if}}
         </div></div>
@@ -45,10 +45,24 @@
     </div>
 
     <script>
+    var changeHash = function(cell) {
+      document.querySelector("main").className = cell;
+      var cells = document.querySelectorAll(".hex-cell");
+      for (i = 0; i < cells.length; i++) {
+        cells[i].classList.remove("active");
+      }
+      if(cell === ""){
+        document.querySelector(".cell-home").classList.add("active");
+      }else{
+        document.querySelector(".cell-".concat(cell)).classList.add("active");
+      }
+    };
     window.addEventListener("hashchange", function(event){
-      document.querySelector("main").className = location.hash.substring(1);
+      changeHash(location.hash.substring(1));
     }, false);
-    document.querySelector("main").className = location.hash.substring(1);
+    changeHash(location.hash.substring(1));
+
+
     </script>
 <!--     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

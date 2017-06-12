@@ -1,15 +1,15 @@
 [
   {
     "ger": "Cell 1",
-    "file": "cell_1"
+    "file": "cell1"
   },
   {
     "ger": "Cell 2",
-    "file": "cell_2"
+    "file": "cell2"
   },
   {
     "ger": "Cell 3",
-    "file": "cell_3"
+    "file": "cell3"
   },
   {
     "ger": "",
@@ -17,30 +17,30 @@
   },
   {
     "ger": "Cell 4",
-    "file": "cell_4"
+    "file": "cell4"
   },
   {
     "ger": "Locity GmbH",
-    "file": "cell_home"
+    "file": "home"
   },
   {
     "ger": "Cell 5",
-    "file": "cell_5"
+    "file": "cell5"
   },
   {
     "ger": "Cell 6",
-    "file": "cell_6"
+    "file": "cell6"
   },
   {
     "ger": "Cell 7",
-    "file": "cell_7"
+    "file": "cell7"
   },
   {
     "ger": "Cell 8",
-    "file": "cell_8"
+    "file": "cell8"
   },
   {
     "ger": "Cell 9",
-    "file": "cell_9"
+    "file": "cell9"
   }
 ]
