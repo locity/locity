@@ -1,37 +1,46 @@
 [
   {
-    "ger": "Marco Lehmann",
-    "eng": "marco lehmann",
-    "file": "marco_lehmann"
+    "ger": "Cell 1",
+    "file": "cell_1"
   },
   {
-    "ger": "Locity GmbH",
-    "eng": "locity gmbh",
-    "file": "locity_gmbh"
+    "ger": "Cell 2",
+    "file": "cell_2"
   },
   {
-    "ger": "Neuste Projekte",
-    "eng": "recent projects",
-    "file": "projects"
+    "ger": "Cell 3",
+    "file": "cell_3"
   },
   {
-    "ger": "Jobs",
-    "eng": "jobs",
-    "file": "jobs"
+    "ger": "",
+    "file": ""
   },
   {
-    "ger": "Hobbys",
-    "eng": "hobbys",
-    "file": "hobbys"
+    "ger": "Cell 4",
+    "file": "cell_4"
   },
   {
-    "ger": "Kontakt",
-    "eng": "contact",
-    "file": "contact"
+    "ger": "Home",
+    "file": "cell_home"
   },
   {
-    "ger": "Impressum",
-    "eng": "imprint",
-    "file": "imprint"
+    "ger": "Cell 5",
+    "file": "cell_5"
+  },
+  {
+    "ger": "Cell 6",
+    "file": "cell_6"
+  },
+  {
+    "ger": "Cell 7",
+    "file": "cell_7"
+  },
+  {
+    "ger": "Cell 8",
+    "file": "cell_8"
+  },
+  {
+    "ger": "Cell 9",
+    "file": "cell_9"
   }
 ]

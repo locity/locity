@@ -2,81 +2,42 @@
   <head>
       <meta charset="UTF-8">
       <meta http-equiv="content-language" content="en">
-      <title>Marco Lehmann</title>
+      <title>Locity GmbH</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <link rel="apple-touch-icon" sizes="180x180" href="assets/image/fav/apple-touch-icon.png">
       <link rel="icon" type="image/png" sizes="32x32" href="assets/image/fav/favicon-32x32.png">
       <link rel="icon" type="image/png" sizes="16x16" href="assets/image/fav/favicon-16x16.png">
       <link rel="manifest" href="assets/image/fav/manifest.json">
       <link rel="mask-icon" href="assets/image/fav/safari-pinned-tab.svg" color="#5bbad5">
+      <link rel="shortcut icon" href="assets/image/fav/favicon.ico">
+      <meta name="msapplication-config" content="assets/image/fav/browserconfig.xml">
       <meta name="theme-color" content="#ffffff">
       <link rel="stylesheet" href="assets/css/styles.css">
   </head>
   <body>
-    <input class="lang-switch" id="lang-english" type="radio" name="language">
-    <input class="lang-switch" id="lang-german" type="radio" name="language" checked="checked">
-    <div class="lang-wrapper">
-      <aside>
-        <input checked="checked" class="cell-switch" id="close-article" type="radio" name="grid-cell">
-        <label for="close-article" class="close-article-btn"></label>
+    <main>
+      <div class="hex-grid standing">
 
         {{#each cells}}
-        <input class="cell-switch" id="{{this.file}}" type="radio" name="grid-cell"><article>
-          <h1 class="title german">{{ger}}</h1><h1 class="title english">{{eng}}</h1>
-          <section class="german">[[de/{{file}}]]</section>
-          <section class="english">[[en/{{file}}]]</section>
-          {{#unless @first}}
-            {{#withBefore ../cells @index}}
-            <label for="{{file}}" class="page prev"><div></div></label>
-            {{/withBefore}}
-          {{/unless}}
-          {{#unless @last}}
-            {{#withAfter ../cells @index}}
-            <label for="{{this.file}}" class="page next"><div></div></label>
-            {{/withAfter}}
-          {{/unless}}
-        </article>
+        <div class="hex-cell"><div class="hex-offset">
+          <svg width="100%" viewBox="0 0 477 551" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <polygon id="Polygon" stroke="#979797" fill="#D8D8D8" points="238.5 1 476.223973 138.25 476.223973 412.75 238.5 550 0.7760267 412.75 0.7760267 138.25"></polygon>
+            <text class="title font-family="Calibri" font-size="65" font-weight="normal" fill="#FFFFFF">
+              <tspan x="168.882568" y="288">{{this.ger}}</tspan>
+            </text>
+          </svg>
+        </div></div>
         {{/each}}
-
-      </aside>
-      <div class="shadows"></div>
-      <main>
-        <div class="hex-grid lying">
-          <div class="hex-cell"><div class="hex-offset"><div class="hex-bg outer">
-            <div class="hex-bg-1"><div class="hex-bg-2">
-              <div class="content resp-image">
-                <img src="assets/image/marco_lehmann.jpg">
-              </div>
-            </div></div>
-          </div></div></div>
-
-          {{#each cells}}
-          <div class="hex-cell"><label for="{{this.file}}" class="hex-offset"><div class="hex-bg inner">
-          <div class="content">
-            <span class="title german">{{this.ger}}</span>
-            <span class="title english">{{this.eng}}</span>
-          </div></div></label></div>
-          {{/each}}
-
-<!--           <div class="hex-cell">
-          <label for="lang-english" class="hex-offset german"><div class="hex-bg inner"><div class="content">
-            <span class="title">in english</span><i class="flag icon en"></i>
-          </div></div></label>
-          <label for="lang-german" class="hex-offset english"><div class="hex-bg inner"><div class="content">
-            <span class="title">auf deutsch</span><i class="flag icon de"></i>
-          </div></div></label>
-          </div> -->
-        </div>
-        
-      </main>
-    </div>
-    <script>
+      </div>
+      
+    </main>
+<!--     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
       })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
       ga('create', 'UA-3070151-2', 'auto');
       ga('send', 'pageview');
-    </script>
+    </script> -->
   </body>
 </html>

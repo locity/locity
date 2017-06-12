@@ -6,7 +6,7 @@
   </g>
   <g id="Inner" transform="translate(130.000000, 150.000000)">
     <polygon id="Inner-Right-Top" fill="#2A4480" points="304 0 607.109985 175 607.108891 525 477.210022 450 477.210022 250 304 150"></polygon>
-    <polygon id="Innter-Left-Top" fill="#4671D5" points="304 0 303.999992 150 131.578125 249.523438 130.790009 450 0.891108675 525 0.88999939 175"></polygon>
+    <polygon id="Innter-Left-Top" fill="#4671D5" points="304 0 303.999992 150 130.790009 250 130.790009 450 0.891108675 525 0.88999939 175"></polygon>
     <polygon id="Inner-Bottom" fill="#6C8CD5" points="304 550 477.210022 450 607.108891 525 304 700 0.891108675 525 130.790009 450"></polygon>
   </g>
 </svg>

@@ -1,6 +1,0 @@
-- Fitness / Radfahren
-- Reisen
-- Fotografieren
-- Lesen
-- Musik
-- Motorrad (im Moment leider keine Maschine)

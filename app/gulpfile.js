@@ -122,7 +122,7 @@ gulp.task('sass', () => {
   return gulp
     .src('src/assets/scss/**/*.scss')
     // .pipe(sourcemaps.init())
-    .pipe(replace('@@cell_count@@', articles.length + 1))
+    .pipe(replace('@@cell_count@@', articles.length))
     .pipe(sass({
       errLogToConsole: true,
       outputStyle: 'compressed',
