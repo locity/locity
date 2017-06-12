@@ -12,6 +12,23 @@ body {
   justify-content: center;
 }
 
+a {
+  &:link, &:visited, &:active, &:hover {
+    text-decoration: none;
+    color: #fff;
+  }
+  &:hover {
+    color: #ddd;
+  }
+}
+
+.home {
+  position: fixed;
+  top: 5px;
+  left: 5px;
+  z-index: 1000;
+}
+
 .view-box {
   position: relative;
   // transition: all .4s ease;
@@ -26,6 +43,13 @@ body {
     height: 100%;
     position: absolute
   }
+}
+
+.hex-cell section {
+  position: absolute;
+  z-index: 900;
+  top: 50%;
+  left: 50%;
 }
 
 // Grid
@@ -62,9 +86,9 @@ main .content {
 .cell-bg {
   fill: #979797;
   // stroke: #979797;
-  &:hover {
-    fill: #D4D4D4;
-  }
+  // &:hover {
+  //   fill: #D4D4D4;
+  // }
 }
 
 // Navigation
