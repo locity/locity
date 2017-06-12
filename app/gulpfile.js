@@ -66,8 +66,8 @@ gulp.task('clean', () => {
 });
 
 gulp.task('handlebars', function () {
-  var articles = JSON.parse(fs.readFileSync('content/articles.json'));
-  var templateData = { cells: articles };
+  var grid = JSON.parse(fs.readFileSync('content/grid.json'));
+  var templateData = { cells: grid.cells };
   var options = {
     ignorePartials: false,
     helpers : {
@@ -109,7 +109,7 @@ gulp.task('copy', () => {
 
 // SASS compile
 gulp.task('sass', () => {
-  var articles = JSON.parse(fs.readFileSync('content/articles.json'));
+  var grid = JSON.parse(fs.readFileSync('content/grid.json'));
   // Autoprefixer configuration
   var autoprefixerOptions = {
     browsers: [
@@ -119,10 +119,16 @@ gulp.task('sass', () => {
     ]
   };
 
+  var cells_str = "";
+  grid.cells.forEach(function(item){
+    cells_str = cells_str.concat('"',item.file == undefined ? "" : item.file,'" ');
+  });
   return gulp
     .src('src/assets/scss/**/*.scss')
     // .pipe(sourcemaps.init())
-    .pipe(replace('@@cell_count@@', articles.length))
+    .pipe(replace('@@cell_count@@', grid.cells.length))
+    .pipe(replace('@@cols@@', grid.cols))
+    .pipe(replace('@@cells@@', cells_str))
     .pipe(sass({
       errLogToConsole: true,
       outputStyle: 'compressed',
