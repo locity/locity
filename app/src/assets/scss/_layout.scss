@@ -37,6 +37,7 @@ a {
     pointer-events: auto;
   }
   a {
+    font-size: 25px;
     &:link, &:visited, &:active, &:hover {
       text-decoration: none;
       fill: #fff;
@@ -44,6 +45,10 @@ a {
     &:hover {
       fill: #ddd;
     }
+  }
+  .title {
+    font-size: 36px;
+    fill: #fff;
   }
 }
 

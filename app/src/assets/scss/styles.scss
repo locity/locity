@@ -11,30 +11,19 @@ $cols:  @@cols@@;
 @include hexagon-grid($cols, 1, 'standing', 'down');
 
 
-
-
 $row_start:    0;
 $row_height:  87;
-$col_start:  -25;
+$col_start:  -75;
 $col_width:  100;
 $col_offset: -50;
 $cells: @@cells@@;
 
 main {
   // transition: margin .4s ease;
-  transition: all 1s cubic-bezier(0.680, -0.550, 0.265, 1.550); /* easeInOutBack */
-  transition-timing-function: cubic-bezier(0.680, -0.550, 0.265, 1.550); /* easeInOutBack */
-  margin: -87% 75% 0 -75%;
-  // &.cell1 { margin: 0 25% 0 -25%; }
-  // &.cell2 { margin: 0 125% 0 -125%; }
-  // &.cell3 { margin: 0 225% 0 -225%; }
-  // &.cell4 { margin: -87% -25% 0 25%; }
-  // &.home { margin: -90% 75% 0 -75% }
-  // &.cell5 { margin: -87% 175% 0 -175%; }
-  // &.cell6 { margin: -87% 275% 0 -275%; }
-  // &.cell7 { margin: -174% 25% 0 -25%; }
-  // &.cell8 { margin: -174% 125% 0 -125%; }
-  // &.cell9 { margin: -174% 225% 0 -225%; }
+  // transition: all 1s cubic-bezier(0.680, -0.550, 0.265, 1.550); /* easeInOutBack */
+  // transition-timing-function: cubic-bezier(0.680, -0.550, 0.265, 1.550); /* easeInOutBack */
+  transition: all 500ms cubic-bezier(0.675, -0.280, 0.260, 1.295); /* custom */
+  transition-timing-function: cubic-bezier(0.675, -0.280, 0.260, 1.295); /* custom */
 }
 
 main {
@@ -43,18 +32,15 @@ main {
       $i: index($cells, $cells_name);
       $x: $i % $cols;
       $y: floor($i / $cols);
+      $top: percentage(($y * $row_height + $row_start) / -100);
+      $side: percentage(($x * $col_width + $col_start) / 100);
+      @if($y % 2 == 1) {
+        $side: percentage(($x * $col_width + $col_start + $col_offset) / 100);
+      }
       @if($cells_name == 'home'){
-        @if($y % 2 == 0) {
-        margin: percentage(($y * $row_height + $row_start) / -100) percentage(($x * $col_width + $col_start + $col_offset) / 100) 0 percentage(($x * $col_width + $col_start + $col_offset) * -.01);
-      } @else {
-        margin: percentage(($y * $row_height + $row_start) / -100) percentage(($x * $col_width + $col_start - 100) / 100) 0 percentage(($x * $col_width + $col_start - 100) * -.01);
+        margin: $top $side 0 ($side * -1);
       }
-      }
-      @if($y % 2 == 0) {
-        &.#{$cells_name} { margin: percentage(($y * $row_height + $row_start) / -100) percentage(($x * $col_width + $col_start + $col_offset) / 100) 0 percentage(($x * $col_width + $col_start + $col_offset) * -.01); }
-      } @else {
-        &.#{$cells_name} { margin: percentage(($y * $row_height + $row_start) / -100) percentage(($x * $col_width + $col_start - 100) / 100) 0 percentage(($x * $col_width + $col_start - 100) * -.01); }
-      }
+      &.#{$cells_name} { margin: $top $side 0 ($side * -1); }
     }
   }
 }

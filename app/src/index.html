@@ -24,38 +24,68 @@
         <div class="hex-cell cell-{{file}}"><div class="hex-offset">
           <svg width="100%" viewBox="0 0 477 551" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
             <polygon class="cell-bg" points="238.5 1 476.223973 138.25 476.223973 412.75 238.5 550 0.7760267 412.75 0.7760267 138.25"></polygon>
-            {{#if file}}
-            <a xlink:href="#cell1">
-            <text id="Top-Left" transform="translate(125.747525, 78.951220) rotate(-30.000000) translate(-125.747525, -78.951220)">
-                <tspan x="93.7260405" y="85.9512203">Top Left</tspan>
-            </text>
-            </a>
-            <a xlink:href="#cell2">
-            <text id="Bottom-Left" transform="translate(125.747525, 469.951220) rotate(30.000000) translate(-125.747525, -469.951220)">
-                <tspan x="78.0180327" y="476.95122">Bottom Left</tspan>
-            </text>
-            </a>
-            <a xlink:href="#cell3">
-            <text id="Bottom-Right" transform="translate(351.747525, 471.951220) rotate(-30.000000) translate(-351.747525, -471.951220)">
-                <tspan x="298.324673" y="478.95122">Bottom Right</tspan>
-            </text>
-            </a>
-            <a xlink:href="#cell4">
-            <text id="Right" transform="translate(464.000000, 276.117831) rotate(-90.000000) translate(-464.000000, -276.117831)">
-                <tspan x="443.057617" y="283.117831">Right</tspan>
-            </text>
-            </a>
-            <a xlink:href="#cell5">
-            <text id="Right-Copy" transform="translate(13.000000, 274.117831) rotate(90.000000) translate(-13.000000, -274.117831)">
-                <tspan x="-2.24902344" y="281.117831">Left</tspan>
-            </text>
-            </a>
-            <a xlink:href="#cell6">
-            <text id="Top-Right" transform="translate(351.747525, 78.951220) rotate(30.000000) translate(-351.747525, -78.951220)">
-                <tspan x="314.032681" y="85.9512203">Top Right</tspan>
-            </text>
-            </a>
-            {{/if}}
+{{#if file}}
+  <text text-anchor="middle" class="title">
+      <tspan x="238.5" y="283">{{title}}</tspan>
+  </text>
+
+  {{#withNeighbor ../cells "TL" @index}}
+    {{#if file}}
+      <a xlink:href="#{{file}}">
+      <text id="Top-Left" transform="translate(127.497525, 81.982309) rotate(-30.000000) translate(-127.497525, -81.982309)">
+          <tspan x="87.4706694" y="90.4823092">{{title}}</tspan>
+      </text>
+      </a>
+    {{/if}}
+  {{/withNeighbor}}
+  {{#withNeighbor ../cells "BL" @index}}
+    {{#if file}}
+      <a xlink:href="#{{file}}">
+      <text id="Bottom-Left" text-anchor="middle" transform="translate(127.497525, 466.982309) rotate(30.000000) translate(-127.497525, -466.982309)">
+          <tspan x="67.8356596" y="475.482309">{{title}}</tspan>
+      </text>
+      </a>
+    {{/if}}
+  {{/withNeighbor}}
+  {{#withNeighbor ../cells "BR" @index}}
+    {{#if file}}
+      <a xlink:href="#{{file}}">
+      <text id="Bottom-Right" text-anchor="middle" transform="translate(349.497525, 466.982309) rotate(-30.000000) translate(-349.497525, -466.982309)">
+          <tspan x="282.71896" y="475.482309">{{title}}</tspan>
+      </text>
+      </a>
+    {{/if}}
+  {{/withNeighbor}}
+  {{#withNeighbor ../cells "TR" @index}}
+    {{#if file}}
+      <a xlink:href="#{{file}}">
+      <text id="Top-Right" text-anchor="middle" transform="translate(349.497525, 81.982309) rotate(30.000000) translate(-349.497525, -81.982309)">
+          <tspan x="302.35397" y="90.4823092">{{title}}</tspan>
+      </text>
+      </a>
+    {{/if}}
+  {{/withNeighbor}}
+  
+  {{#withBefore ../cells @index}}
+    {{#if file}}
+      <a xlink:href="#{{file}}">
+      <text id="Left" text-anchor="middle" transform="translate(16.500000, 274.117831) rotate(90.000000) translate(-16.500000, -274.117831)">
+          <tspan x="-2.5612793" y="282.617831">{{title}}</tspan>
+      </text>
+      </a>
+    {{/if}}
+  {{/withBefore}}
+
+  {{#withAfter ../cells @index}}
+    {{#if file}}
+      <a xlink:href="#{{file}}">
+      <text id="Right" text-anchor="middle" transform="translate(460.723973, 274.117831) rotate(-90.000000) translate(-460.723973, -274.117831)">
+          <tspan x="434.545994" y="282.617831">{{title}}</tspan>
+      </text>
+      </a>
+    {{/if}}
+  {{/withAfter}}
+{{/if}}
           </svg>
         </div></div>
         {{/each}}

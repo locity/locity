@@ -68,9 +68,30 @@ gulp.task('clean', () => {
 gulp.task('handlebars', function () {
   var grid = JSON.parse(fs.readFileSync('content/grid.json'));
   var templateData = { cells: grid.cells };
+  var cols = grid.cols;
   var options = {
     ignorePartials: false,
     helpers : {
+      withNeighbor: function(array, direction, idx, options) {
+        var row = Math.floor(idx / cols);
+        var offset = row % 2;
+        var item = 0;
+        switch(direction) {
+          case "TL":
+            item = idx - cols - offset;
+            break;
+          case "TR":
+            item = idx - cols - offset + 1;
+            break;
+          case "BL":
+            item = idx + cols - offset;
+            break;
+          case "BR":
+            item = idx + cols - offset + 1;
+            break;
+        }
+        return options.fn(array[item]);
+      },
       withAfter: function(array, idx, options) {
         return options.fn(array[idx + 1]);
       },
