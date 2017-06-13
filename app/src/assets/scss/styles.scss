@@ -12,7 +12,7 @@ $cols:  @@cols@@;
 
 
 $row_start:    0;
-$row_height:  87;
+$row_height:  75;
 $col_start:  -75;
 $col_width:  100;
 $col_offset: -50;
@@ -35,14 +35,14 @@ main {
       $x: $i % $cols;
       $y: floor($i / $cols);
       $top: percentage(($y * $row_height + $row_start) / -100);
-      $side: percentage(($x * $col_width + $col_start) / 100);
+      $side: percentage(($x * $col_width + $col_start) / -100);
       @if($y % 2 == 1) {
-        $side: percentage(($x * $col_width + $col_start + $col_offset) / 100);
+        $side: percentage(($x * $col_width + $col_start + $col_offset) / -100);
       }
       @if($cells_name == 'home'){
-        margin: $top $side 0 ($side * -1);
+        transform: translate($side, $top);
       }
-      &.#{$cells_name} { margin: $top $side 0 ($side * -1); }
+      &.#{$cells_name} { transform: translate($side, $top); }
     }
   }
 }
