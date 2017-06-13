@@ -32,8 +32,8 @@
   {{#withNeighbor ../cells "TL" @index}}
     {{#if file}}
       <a xlink:href="#{{file}}">
-      <text id="Top-Left" transform="translate(127.497525, 81.982309) rotate(-30.000000) translate(-127.497525, -81.982309)">
-          <tspan x="87.4706694" y="90.4823092">{{title}}</tspan>
+      <text transform="rotate(-30.000000)" x="70" y="145">
+          <tspan width="300" alignment-baseline="middle" text-anchor="middle">{{title}}</tspan>
       </text>
       </a>
     {{/if}}
@@ -41,8 +41,8 @@
   {{#withNeighbor ../cells "BL" @index}}
     {{#if file}}
       <a xlink:href="#{{file}}">
-      <text id="Bottom-Left" text-anchor="middle" transform="translate(127.497525, 466.982309) rotate(30.000000) translate(-127.497525, -466.982309)">
-          <tspan x="67.8356596" y="475.482309">{{title}}</tspan>
+      <text transform="rotate(30.000000)" x="343" y="343">
+          <tspan width="300" alignment-baseline="middle" text-anchor="middle">{{title}}</tspan>
       </text>
       </a>
     {{/if}}
@@ -50,8 +50,8 @@
   {{#withNeighbor ../cells "BR" @index}}
     {{#if file}}
       <a xlink:href="#{{file}}">
-      <text id="Bottom-Right" text-anchor="middle" transform="translate(349.497525, 466.982309) rotate(-30.000000) translate(-349.497525, -466.982309)">
-          <tspan x="282.71896" y="475.482309">{{title}}</tspan>
+      <text transform="rotate(-30.000000)" x="68" y="580">
+          <tspan width="300" alignment-baseline="middle" text-anchor="middle">{{title}}</tspan>
       </text>
       </a>
     {{/if}}
@@ -59,8 +59,8 @@
   {{#withNeighbor ../cells "TR" @index}}
     {{#if file}}
       <a xlink:href="#{{file}}">
-      <text id="Top-Right" text-anchor="middle" transform="translate(349.497525, 81.982309) rotate(30.000000) translate(-349.497525, -81.982309)">
-          <tspan x="302.35397" y="90.4823092">{{title}}</tspan>
+      <text transform="rotate(30.000000)" x="340" y="-95">
+          <tspan width="300" alignment-baseline="middle" text-anchor="middle">{{title}}</tspan>
       </text>
       </a>
     {{/if}}
@@ -69,8 +69,8 @@
   {{#withBefore ../cells @index}}
     {{#if file}}
       <a xlink:href="#{{file}}">
-      <text id="Left" text-anchor="middle" transform="translate(16.500000, 274.117831) rotate(90.000000) translate(-16.500000, -274.117831)">
-          <tspan x="-2.5612793" y="282.617831">{{title}}</tspan>
+      <text transform="rotate(-90.000000)" x="-278" y="25">
+          <tspan width="300" alignment-baseline="middle" text-anchor="middle">{{title}}</tspan>
       </text>
       </a>
     {{/if}}
@@ -79,8 +79,8 @@
   {{#withAfter ../cells @index}}
     {{#if file}}
       <a xlink:href="#{{file}}">
-      <text id="Right" text-anchor="middle" transform="translate(460.723973, 274.117831) rotate(-90.000000) translate(-460.723973, -274.117831)">
-          <tspan x="434.545994" y="282.617831">{{title}}</tspan>
+      <text transform="rotate(90.000000)" x="278" y="-453">
+          <tspan width="300" alignment-baseline="middle" text-anchor="middle">{{title}}</tspan>
       </text>
       </a>
     {{/if}}
