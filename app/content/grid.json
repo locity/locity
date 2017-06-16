@@ -1,66 +1,24 @@
 {
-  "cols": 6,
+  "cols": 3,
   "cells": [
-    {"title":""},
-    {"title":""},
-    {"title":""},
-    {"title":""},
-    {"title":""},
-    {"title":""},
-    {"title":""},
-    {
-      "title": "Cell 1",
-      "file": "cell1"
-    },
-    {
-      "title": "Cell 2",
-      "file": "cell2"
-    },
-    {
-      "title": "Cell 3",
-      "file": "cell3"
-    },
-    {
-      "title": "",
-      "file": ""
-    },
-    {"title":""},
-    {"title":""},
-    {
-      "title": "Cell 4",
-      "file": "cell4"
-    },
-    {
-      "title": "Locity GmbH",
-      "file": "home"
-    },
-    {
-      "title": "Cell 5",
-      "file": "cell5"
-    },
-    {
-      "title": "Cell 6",
-      "file": "cell6"
-    },
-    {"title":""},
-    {"title":""},
-    {
-      "title": "Cell 7",
-      "file": "cell7"
-    },
-    {
-      "title": "Cell 8",
-      "file": "cell8"
-    },
-    {
-      "title": "Cell 9",
-      "file": "cell9"
-    },
-    {"title":""},
-    {"title":""},
-    {"title":""},
-    {"title":""},
-    {"title":""},
-    {"title":""}
+    {"title": "Cell 1", "file": "cell1"},
+    {"title": "Cell 2", "file": "cell2"},
+    {"title": "Cell 3", "file": "cell3"},
+    {"title": "Cell 4", "file": "cell4"},
+    {"title": "Locity GmbH", "file": "home"},
+    {"title": "Cell 5", "file": "cell5"},
+    {"title": "Cell 6", "file": "cell6"},
+    {"title": "Cell 7", "file": "cell7"},
+    {"title": "Cell 8", "file": "cell8"},
+    {"title": "Cell 9", "file": "cell9"},
+    {"title": ""},
+    {"title": ""},
+    {"title": ""},
+    {"title": ""},
+    {"title": ""},
+    {"title": ""},
+    {"title": ""},
+    {"title": "Impressum", "file": "impressum", "TL": {"title": "Zurück", "file": "home"}}
+
   ]
 }

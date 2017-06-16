@@ -13,7 +13,7 @@ $cols:  @@cols@@;
 
 $row_start:    0;
 $row_height:  75;
-$col_start:  -75;
+$col_start:  25;
 $col_width:  100;
 $col_offset: -50;
 $cells: @@cells@@;
@@ -32,7 +32,7 @@ main {
 main {
   @each $cells_name in $cells {
     @if($cells_name != '') {
-      $i: index($cells, $cells_name);
+      $i: index($cells, $cells_name) - 1;
       $x: $i % $cols;
       $y: floor($i / $cols);
       $top: percentage(($y * $row_height + $row_start) / -100);

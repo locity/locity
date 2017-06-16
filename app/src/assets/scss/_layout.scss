@@ -8,6 +8,19 @@ body {
   font-family: 'Maven Pro', sans-serif;
 }
 
+a.impressum-link {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  display: block;
+  &:link, &:visited, &:active, &:hover {
+    color: #4671D5;
+  }
+  &:hover {
+    color: #3661C5;
+  }
+}
+
 .view-box-wrapper {
   position: relative;
   overflow: hidden;

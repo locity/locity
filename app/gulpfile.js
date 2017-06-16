@@ -69,6 +69,10 @@ gulp.task('handlebars', function () {
   var grid = JSON.parse(fs.readFileSync('content/grid.json'));
   var templateData = { cells: grid.cells };
   var cols = grid.cols;
+  console.log("==============================")
+  console.log("Cells: ", grid.cells.length)
+  console.log("Cols:  ", cols)
+  console.log("==============================")
   var options = {
     ignorePartials: false,
     helpers : {
@@ -78,19 +82,37 @@ gulp.task('handlebars', function () {
         var item = 0;
         switch(direction) {
           case "TL":
-            item = idx - cols - offset;
+            if(array[idx].TL){
+              item = array[idx].TL
+            }else{
+              item = array[idx - cols - offset];
+            }
             break;
           case "TR":
-            item = idx - cols - offset + 1;
+            item = array[idx - cols - offset + 1];
             break;
           case "BL":
-            item = idx + cols - offset;
+            item = array[idx + cols - offset];
             break;
           case "BR":
-            item = idx + cols - offset + 1;
+            item = array[idx + cols - offset + 1];
+            break;
+          case "L":
+            if((idx - 1) % cols < idx % cols){
+              item = array[idx - 1];
+            }else{
+              item = {"title": ""};
+            }
+            break;
+          case "R":
+            if((idx + 1) % cols > idx % cols){
+              item = array[idx + 1];
+            }else{
+              item = {"title": ""};
+            }
             break;
         }
-        return options.fn(array[item]);
+        return options.fn(item);
       },
       withAfter: function(array, idx, options) {
         return options.fn(array[idx + 1]);

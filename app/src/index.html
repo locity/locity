@@ -22,9 +22,9 @@
       <main class="cell-home">
         {{#each cells}}
         <div class="hex-cell cell-{{file}}"><div class="hex-offset">
-          <svg width="100%" viewBox="0 0 477 551" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-            <polygon class="cell-bg" points="238.5 1 476.223973 138.25 476.223973 412.75 238.5 550 0.7760267 412.75 0.7760267 138.25"></polygon>
 {{#if file}}
+<svg width="100%" viewBox="0 0 477 551" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <polygon class="cell-bg" points="238.5 1 476.223973 138.25 476.223973 412.75 238.5 550 0.7760267 412.75 0.7760267 138.25"></polygon>
   <text text-anchor="middle" class="title">
       <tspan x="238.5" y="283">{{title}}</tspan>
   </text>
@@ -66,7 +66,7 @@
     {{/if}}
   {{/withNeighbor}}
   
-  {{#withBefore ../cells @index}}
+  {{#withNeighbor ../cells "L" @index}}
     {{#if file}}
       <a xlink:href="#{{file}}">
       <text transform="rotate(-90.000000)" x="-278" y="25">
@@ -74,9 +74,9 @@
       </text>
       </a>
     {{/if}}
-  {{/withBefore}}
+  {{/withNeighbor}}
 
-  {{#withAfter ../cells @index}}
+  {{#withNeighbor ../cells "R" @index}}
     {{#if file}}
       <a xlink:href="#{{file}}">
       <text transform="rotate(90.000000)" x="278" y="-453">
@@ -84,15 +84,15 @@
       </text>
       </a>
     {{/if}}
-  {{/withAfter}}
+  {{/withNeighbor}}
+</svg>
 {{/if}}
-          </svg>
         </div></div>
         {{/each}}
       </main></div>
       
     </div></div></div>
-
+    <a href="#impressum" class="impressum-link">Impressum</a>
     <script>
     var changeHash = function(cell) {
       document.querySelector("main").className = cell;
