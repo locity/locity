@@ -21,6 +21,22 @@ const fs = require('fs');
 const gulpAmpValidator = require('gulp-amphtml-validator');
 const svgSprite = require("gulp-svg-sprites");
 
+var get_cells = function(grid){
+  var cell_data = grid.cells;
+  var cell_layout = grid.layout;
+  var counter = 0;
+  var cells = [];
+  for(var i = 0; i < cell_layout.length; i++){
+    if(cell_layout[i] === 1){
+      cells.push(cell_data[counter]);
+      counter++;
+    }else{
+      cells.push({"title": ""});
+    }
+  }
+  return cells;
+};
+
 gulp.task('svg_sprite', function () {
   return gulp.src(['src/assets/image/lang/*.svg', 'src/assets/image/logos/*.svg'])
     .pipe(svgSprite({
@@ -65,14 +81,13 @@ gulp.task('clean', () => {
   .pipe(clean());
 });
 
+
+
 gulp.task('handlebars', function () {
   var grid = JSON.parse(fs.readFileSync('content/grid.json'));
-  var templateData = { cells: grid.cells };
+  var cells = get_cells(grid);
+  var templateData = { cells: cells };
   var cols = grid.cols;
-  console.log("==============================")
-  console.log("Cells: ", grid.cells.length)
-  console.log("Cols:  ", cols)
-  console.log("==============================")
   var options = {
     ignorePartials: false,
     helpers : {
@@ -85,30 +100,66 @@ gulp.task('handlebars', function () {
             if(array[idx].TL){
               item = array[idx].TL
             }else{
-              item = array[idx - cols - offset];
+              if(Math.floor((idx - cols - offset) / cols) + 1 === row){
+                item = array[idx - cols - offset];
+              }else{
+                item = {"title": ""};
+              }
             }
             break;
           case "TR":
-            item = array[idx - cols - offset + 1];
+            if(array[idx].TR){
+              item = array[idx].TR
+            }else{
+              if(Math.floor((idx - cols - offset + 1) / cols) + 1 === row){
+                item = array[idx - cols - offset + 1];
+              }else{
+                item = {"title": ""};
+              }
+            }
             break;
           case "BL":
-            item = array[idx + cols - offset];
+            if(array[idx].BL){
+              item = array[idx].BL
+            }else{
+              if(Math.floor((idx + cols - offset) / cols) - 1 === row){
+                item = array[idx + cols - offset];
+              }else{
+                item = {"title": ""};
+              }
+            }
             break;
           case "BR":
-            item = array[idx + cols - offset + 1];
+            if(array[idx].BR){
+              item = array[idx].BR
+            }else{
+              if(Math.floor((idx + cols - offset + 1) / cols) - 1 === row){
+                item = array[idx + cols - offset + 1];
+              }else{
+                item = {"title": ""};
+              }
+            }
             break;
           case "L":
-            if((idx - 1) % cols < idx % cols){
-              item = array[idx - 1];
+            if(array[idx].L){
+              item = array[idx].L
             }else{
-              item = {"title": ""};
+              if((idx - 1) % cols < idx % cols){
+                item = array[idx - 1];
+              }else{
+                item = {"title": ""};
+              }
             }
             break;
           case "R":
-            if((idx + 1) % cols > idx % cols){
-              item = array[idx + 1];
+            if(array[idx].R){
+              item = array[idx].R
             }else{
-              item = {"title": ""};
+              if((idx + 1) % cols > idx % cols){
+                item = array[idx + 1];
+              }else{
+                item = {"title": ""};
+              }
             }
             break;
         }
@@ -153,6 +204,7 @@ gulp.task('copy', () => {
 // SASS compile
 gulp.task('sass', () => {
   var grid = JSON.parse(fs.readFileSync('content/grid.json'));
+  var cells = get_cells(grid);
   // Autoprefixer configuration
   var autoprefixerOptions = {
     browsers: [
@@ -163,13 +215,13 @@ gulp.task('sass', () => {
   };
 
   var cells_str = "";
-  grid.cells.forEach(function(item){
+  cells.forEach(function(item){
     cells_str = cells_str.concat('"',item.file == undefined ? "" : item.file,'" ');
   });
   return gulp
     .src('src/assets/scss/**/*.scss')
     // .pipe(sourcemaps.init())
-    .pipe(replace('@@cell_count@@', grid.cells.length))
+    .pipe(replace('@@cell_count@@', cells.length))
     .pipe(replace('@@cols@@', grid.cols))
     .pipe(replace('@@cells@@', cells_str))
     .pipe(sass({
