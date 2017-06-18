@@ -11,6 +11,7 @@
   color: #333;
   &>h1 {
     text-align: center;
+    margin-top: 0;
   }
   a {
     &:link, &:visited, &:active, &:hover {
@@ -30,11 +31,18 @@
   .center {
     text-align: center;
   }
-
   .image-line {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+  }
+  .icon.small {
+    &:before {
+      transform: scale(.6);
+    }
+  }
+  p {
+    margin: .5em 0;
   }
 }
 
@@ -45,32 +53,35 @@
 @media screen and (max-width: $cell_min_width + 0px) {
   .hex-cell section {
     font-size: 10px;
-    &>h1 { font-size: 12px; }
-    h1 { font-size: 11px; }
-    h2 { font-size: 10px; }
-    h3 { font-size: 10px; }
-    h4 { font-size: 10px; }
+    table { font-size: 10px; }
+    &>h1  { font-size: 12px; }
+    h1    { font-size: 11px; }
+    h2    { font-size: 10px; }
+    h3    { font-size: 10px; }
+    h4    { font-size: 10px; }
   }
 }
 
 @media screen and (min-width: $cell_min_width + 1px) and (max-width: $cell_max_width + 0px) {
   .hex-cell section {
     font-size: 2.9vw;
-    &>h1 { font-size: 4vw; }
-    h1 { font-size: 3.6vw; }
-    h2 { font-size: 3.4vw; }
-    h3 { font-size: 3.2vw; }
-    h4 { font-size: 3vw; }
+    table { font-size: 2.9vw; }
+    &>h1  { font-size: 4vw; }
+    h1    { font-size: 3.6vw; }
+    h2    { font-size: 3.4vw; }
+    h3    { font-size: 3.2vw; }
+    h4    { font-size: 3vw; }
   }
 }
 
 @media screen and (min-width: $cell_max_width + 1px) {
   .hex-cell section {
     font-size: 18px;
-    &>h1 { font-size: 32px; }
-    h1 { font-size: 30px; }
-    h2 { font-size: 28px; }
-    h3 { font-size: 26px; }
-    h4 { font-size: 24px; }
+    table { font-size: 18px; }
+    &>h1  { font-size: 32px; }
+    h1    { font-size: 30px; }
+    h2    { font-size: 28px; }
+    h3    { font-size: 26px; }
+    h4    { font-size: 24px; }
   }
 }

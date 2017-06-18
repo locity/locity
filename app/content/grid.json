@@ -8,11 +8,11 @@
      0,0,0,1
   ],
   "cells": [
-    {"title": "Cell 1", "file": "cell1"},
-    {"title": "Cell 2", "file": "cell2"},
+    {"title": "Kunden", "file": "kunden"},
+    {"title": "Kontakt", "file": "kontakt"},
     {"title": "Digitale Transformation", "file": "digitale-transformation"},
     {"title": "Workshop/Schulung", "file": "workshop-schulung"},
-    {"title": "Kontakt", "file": "kontakt"},
+    {"title": "Test", "file": "test"},
     {"title": "Locity GmbH", "file": "home", "R": {"title": "Schwerpunkte", "file": "schwerpunkte"}},
     {"title": "Websites", "file": "websites"},
     {"title": "Schwerpunkte", "file": "schwerpunkte"},

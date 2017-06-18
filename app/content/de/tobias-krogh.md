@@ -17,14 +17,14 @@ __Geschäftsführer__
 </a>
 
 <a href="https://www.xing.com/profile/Tobias_Krogh" target="_blank">
-  <i class="icon xing" title="XING"></i>
+  <i class="icon small xing" title="XING"></i>
 </a>
 
 <a href="https://www.linkedin.com/in/tobias-krogh-hh" target="_blank">
-  <i class="icon linkedin" title="LinkedIn"></i>
+  <i class="icon small linkedin" title="LinkedIn"></i>
 </a>
 
 <a href="http://stackoverflow.com/users/1342159/tobias-krogh" target="_blank">
-  <i class="icon stackoverflow" title="Stackoverflow"></i>
+  <i class="icon small stackoverflow" title="Stackoverflow"></i>
 </a>
 </p>

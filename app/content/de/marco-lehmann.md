@@ -20,18 +20,18 @@ __Geschäftsführer__
 </a>
 
 <a href="https://www.xing.com/profile/Marco_Lehmann4" target="_blank">
-  <i class="icon xing" title="XING"></i>
+  <i class="icon small xing" title="XING"></i>
 </a>
 
 <a href="https://www.linkedin.com/in/marcolehmannhh" target="_blank">
-  <i class="icon linkedin" title="LinkedIn"></i>
+  <i class="icon small linkedin" title="LinkedIn"></i>
 </a>
 
 <a href="https://twitter.com/themlee" target="_blank">
-  <i class="icon twitter" title="Twitter"></i>
+  <i class="icon small twitter" title="Twitter"></i>
 </a>
 
 <a href="http://stackoverflow.com/users/8102667/marco-lehmann" target="_blank">
-  <i class="icon stackoverflow" title="Stackoverflow"></i>
+  <i class="icon small stackoverflow" title="Stackoverflow"></i>
 </a>
 </p>
