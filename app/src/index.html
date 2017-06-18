@@ -21,7 +21,7 @@
       <div><div>
       <main class="cell-home">
         {{#each cells}}
-        <div class="hex-cell cell-{{file}}"><div class="hex-offset">
+        <div class="hex-cell cell-{{file}}" data-title="{{title}}"><div class="hex-offset">
 {{#if file}}
 <svg width="100%" viewBox="0 0 477 551" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
   <polygon class="cell-bg" points="238.5 1 476.223973 138.25 476.223973 412.75 238.5 550 0.7760267 412.75 0.7760267 138.25"></polygon>
@@ -92,7 +92,8 @@
       </main></div>
       
     </div></div></div>
-    <a href="#impressum" class="impressum-link">Impressum</a>
+    <a href="#impressum" class="impressum-link dark">Impressum</a>
+    <a href="#home" class="copywrite-link dark">© 2017 Locity GmbH</a>
     <script>
     var changeHash = function(cell) {
       document.querySelector("main").className = cell;
@@ -100,12 +101,15 @@
       for (i = 0; i < cells.length; i++) {
         cells[i].classList.remove("active");
       }
-      if(cell === ""){
-        document.querySelector(".cell-home").classList.add("active");
+      var active_cell = null;
+      if(cell === "" || cell === "home"){
+        active_cell = document.querySelector(".cell-home");
+        document.title = "Locity GmbH";
       }else{
-        document.querySelector(".cell-".concat(cell)).classList.add("active");
+        active_cell = document.querySelector(".cell-".concat(cell));
+        document.title = active_cell.dataset.title.concat(" - Locity GmbH");
       }
-      // document.title = "Locity GmbH"
+      active_cell.classList.add("active");
     };
     window.addEventListener("hashchange", function(event){
       changeHash(location.hash.substring(1));
