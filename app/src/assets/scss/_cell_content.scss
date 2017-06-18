@@ -46,10 +46,6 @@
   }
 }
 
-
-
-
-
 @media screen and (max-width: $cell_min_width + 0px) {
   .hex-cell section {
     font-size: 10px;
@@ -59,6 +55,16 @@
     h2    { font-size: 10px; }
     h3    { font-size: 10px; }
     h4    { font-size: 10px; }
+    .icon {
+      &:before {
+        transform: scale(.8);
+      }
+      &.small {
+        &:before {
+          transform: scale(.48);
+        }
+      }
+    }
   }
 }
 
