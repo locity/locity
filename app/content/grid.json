@@ -1,28 +1,28 @@
 {
-  "cols": 7,
+  "cols": 6,
   "layout": [
-     1,1,0,0,1,1,0,
-    1,1,0,0,1,1,1,
-     1,1,0,0,1,1,0,
-    0,1,1,0,0,0,0,
+     1,1,0,1,1,0,
+    1,1,0,1,1,1,
+     1,1,0,1,1,0,
+    0,1,1,0,0,0,
      0,0,0,1
   ],
   "cells": [
     {"title": "Cell 1", "file": "cell1"},
     {"title": "Cell 2", "file": "cell2"},
-    {"title": "Cell 3", "file": "cell3"},
-    {"title": "Cell 4", "file": "cell4"},
-    {"title": "Cell 5", "file": "cell5"},
+    {"title": "Digitale Transformation", "file": "digitale-transformation"},
+    {"title": "Workshop/Schulung", "file": "workshop-schulung"},
+    {"title": "Kontakt", "file": "kontakt"},
     {"title": "Locity GmbH", "file": "home", "R": {"title": "Schwerpunkte", "file": "schwerpunkte"}},
-    {"title": "Cell 7", "file": "cell7"},
+    {"title": "Websites", "file": "websites"},
     {"title": "Schwerpunkte", "file": "schwerpunkte"},
-    {"title": "Cell 9", "file": "cell9"},
-    {"title": "Cell 10", "file": "cell10", "BR": {"title": ""}},
+    {"title": "UX/Prototyping", "file": "ux-prototyping"},
+    {"title": "Offene Stellen", "file": "offene-stellen", "BR": {"title": ""}},
     {"title": "Team", "file": "team", "L": {"title": ""}},
-    {"title": "Cell 11", "file": "cell11"},
-    {"title": "Cell 12", "file": "cell12"},
-    {"title": "Marco Lehmann", "file": "marco_lehmann", "TL": {"title": ""}},
-    {"title": "Tobias Krogh", "file": "tobias_krogh"},
+    {"title": "Mobile Web App", "file": "mobile-web-app"},
+    {"title": "Single Page App", "file": "single-page-app"},
+    {"title": "Marco Lehmann", "file": "marco-lehmann", "TL": {"title": ""}},
+    {"title": "Tobias Krogh", "file": "tobias-krogh"},
     {"title": "Impressum", "file": "impressum", "TL": {"title": "Zurück", "file": "home"}}
   ]
 }

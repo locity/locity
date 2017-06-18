@@ -62,13 +62,24 @@ a {
     pointer-events: auto;
   }
   a {
-    font-size: 25px;
     &:link, &:visited, &:active, &:hover {
-      text-decoration: none;
-      fill: #fff;
+      text {
+        font-size: 20px;
+        fill: #fff;
+        text-decoration: none;
+      }
+      path {
+        fill: #333;
+        opacity: 0;
+      }
     }
     &:hover {
-      fill: #ddd;
+      text {
+        fill: #eee;
+      }
+      path {
+        opacity: .2;
+      }
     }
   }
   .title {
@@ -95,7 +106,7 @@ a {
   // transition: all .4s ease;
   width: 100%;
   min-width: 320px;
-  max-width: 900px;
+  max-width: 800px;
   // &:after { padding-bottom: 86.6025403784439%; }
   // &:after { padding-bottom: 115.4700538379251%; }
   &>div>div {
