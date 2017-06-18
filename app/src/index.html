@@ -24,17 +24,16 @@
         <div class="hex-cell cell-{{file}}" data-title="{{title}}"><div class="hex-offset">
 {{#if file}}
 <svg width="100%" viewBox="0 0 477 551" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-  <!-- <polygon class="cell-bg" points="238.5 1 476.223973 138.25 476.223973 412.75 238.5 550 0.7760267 412.75 0.7760267 138.25"></polygon> -->
   <path class="cell-bg" d="M238.5 0l237.724 137.25v274.5L238.5 549 .776 411.75v-274.5z"/>
-  <text text-anchor="middle" class="title">
+  <!-- <text text-anchor="middle" class="title">
       <tspan x="238.5" y="283">{{title}}</tspan>
-  </text>
+  </text> -->
 
   {{#withNeighbor ../cells "TL" @index}}
     {{#if file}}
-      <a xlink:href="#{{file}}">
+      <a xlink:href="#_{{file}}">
         <path class="cell-click-area" d="M238.5 0L.78 137.25 42 161.05 238.5 47.6z"/>
-        <text transform="rotate(-30.000000)" x="70" y="145">
+        <text transform="rotate(-30.000000)" x="69.4" y="142.5">
           <tspan width="300" alignment-baseline="middle" text-anchor="middle">{{title}}</tspan>
         </text>
       </a>
@@ -42,9 +41,9 @@
   {{/withNeighbor}}
   {{#withNeighbor ../cells "BL" @index}}
     {{#if file}}
-      <a xlink:href="#{{file}}">
+      <a xlink:href="#_{{file}}">
         <path class="cell-click-area" d="M.78 411.75L238.5 549v-47.6L42 387.95z"/>
-        <text transform="rotate(30.000000)" x="343" y="343">
+        <text transform="rotate(30.000000)" x="344" y="338.2">
           <tspan width="300" alignment-baseline="middle" text-anchor="middle">{{title}}</tspan>
         </text>
       </a>
@@ -52,9 +51,9 @@
   {{/withNeighbor}}
   {{#withNeighbor ../cells "BR" @index}}
     {{#if file}}
-      <a xlink:href="#{{file}}">
+      <a xlink:href="#_{{file}}">
         <path class="cell-click-area" d="M476.22 411.75L238.5 549v-47.6L435 387.95z"/>
-        <text transform="rotate(-30.000000)" x="68" y="580">
+        <text transform="rotate(-30.000000)" x="70" y="577">
           <tspan width="300" alignment-baseline="middle" text-anchor="middle">{{title}}</tspan>
         </text>
       </a>
@@ -62,9 +61,9 @@
   {{/withNeighbor}}
   {{#withNeighbor ../cells "TR" @index}}
     {{#if file}}
-      <a xlink:href="#{{file}}">
+      <a xlink:href="#_{{file}}">
         <path class="cell-click-area" d="M238.5 0l237.72 137.25-41.22 23.8L238.5 47.6z"/>
-        <text transform="rotate(30.000000)" x="340" y="-95">
+        <text transform="rotate(30.000000)" x="343.6" y="-96">
           <tspan width="300" alignment-baseline="middle" text-anchor="middle">{{title}}</tspan>
         </text>
       </a>
@@ -72,9 +71,9 @@
   {{/withNeighbor}}
   {{#withNeighbor ../cells "L" @index}}
     {{#if file}}
-      <a xlink:href="#{{file}}">
+      <a xlink:href="#_{{file}}">
         <path class="cell-click-area" d="M.78 411.75v-274.5L42 161.05v226.9z"/>
-        <text transform="rotate(-90.000000)" x="-278" y="25">
+        <text transform="rotate(-90.000000)" x="-274.5" y="24">
           <tspan width="300" alignment-baseline="middle" text-anchor="middle">{{title}}</tspan>
         </text>
       </a>
@@ -82,23 +81,24 @@
   {{/withNeighbor}}
   {{#withNeighbor ../cells "R" @index}}
     {{#if file}}
-      <a xlink:href="#{{file}}">
+      <a xlink:href="#_{{file}}">
         <path class="cell-click-area" d="M476.22 411.75v-274.5L435 161.05v226.9z"/>
-        <text transform="rotate(90.000000)" x="278" y="-453">
+        <text transform="rotate(90.000000)" x="274" y="-453.5">
           <tspan width="300" alignment-baseline="middle" text-anchor="middle">{{title}}</tspan>
         </text>
       </a>
     {{/if}}
   {{/withNeighbor}}
 </svg>
+<section>[[de/{{file}}]]</section>
 {{/if}}
         </div></div>
         {{/each}}
       </main></div>
       
     </div></div></div>
-    <a href="#impressum" class="impressum-link dark">Impressum</a>
-    <a href="#home" class="copywrite-link dark">© 2017 Locity GmbH</a>
+    <a href="#_impressum" class="impressum-link dark">Impressum</a>
+    <a href="#_home" class="copywrite-link dark">© 2017 Locity GmbH</a>
     <script>
     var changeHash = function(cell) {
       document.querySelector("main").className = cell;
@@ -117,9 +117,9 @@
       active_cell.classList.add("active");
     };
     window.addEventListener("hashchange", function(event){
-      changeHash(location.hash.substring(1));
+      changeHash(location.hash.substring(2));
     }, false);
-    changeHash(location.hash.substring(1));
+    changeHash(location.hash.substring(2));
 
 
     </script>

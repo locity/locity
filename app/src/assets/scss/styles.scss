@@ -1,15 +1,16 @@
 @import url('https://fonts.googleapis.com/css?family=Maven+Pro:400,500');
+$cell_min_width: 320;
+$cell_max_width: 800;
+
 @import 'layout';
 @import 'hexagon_grid';
 @import 'sprite';
-
+@import 'cell_content';
 
 $cells: @@cell_count@@; // Is inserted by gulp
 $cols:  @@cols@@;
 
-
 @include hexagon-grid($cols, 1, 'standing', 'down');
-
 
 $row_start:    0;
 $row_height:  75;

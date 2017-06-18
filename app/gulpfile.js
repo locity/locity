@@ -81,8 +81,6 @@ gulp.task('clean', () => {
   .pipe(clean());
 });
 
-
-
 gulp.task('handlebars', function () {
   var grid = JSON.parse(fs.readFileSync('content/grid.json'));
   var cells = get_cells(grid);
