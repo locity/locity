@@ -51,17 +51,25 @@ a {
 }
 
 .hex-cell {
-  // transition: opacity 1s ease;
-  opacity: .5;
+  section {
+    transition: opacity 1s ease;
+    opacity: 0;
+  }
+  transition: opacity 1s ease;
+  opacity: .2;
   transition: all 1s ease;
-  filter: blur(5px);
+  // filter: blur(5px);
   pointer-events: none;
   &.active {
-    filter: blur(0);
+    // filter: blur(0);
     opacity: .95;
     pointer-events: auto;
+    section { opacity: 1; }
+    a { opacity: 1; }
   }
   a {
+    transition: opacity 1s ease;
+    opacity: 0;
     &:link, &:visited, &:active, &:hover {
       text {
         font-size: 20px;
