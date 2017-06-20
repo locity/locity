@@ -2,7 +2,7 @@
   "cols": 6,
   "layout": [
      1,1,0,1,1,0,
-    1,1,0,1,1,1,
+    0,1,0,1,1,1,
      1,1,0,1,1,0,
     0,1,1,0,0,0,
      0,0,0,1
@@ -12,7 +12,6 @@
     {"title": "Kontakt", "file": "kontakt"},
     {"title": "Digitale Transformation", "file": "digitale-transformation"},
     {"title": "Workshop/Schulung", "file": "workshop-schulung"},
-    {"title": "Test", "file": "test"},
     {"title": "Locity GmbH", "file": "home", "R": {"title": "Schwerpunkte", "file": "schwerpunkte"}},
     {"title": "Websites", "file": "websites"},
     {"title": "Schwerpunkte", "file": "schwerpunkte"},
